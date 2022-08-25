@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B72909FD28B5B7EC001B20D3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B72909FC28B5B7EC001B20D3 /* main.cpp */; };
+		B7290A0528B65786001B20D3 /* LinAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7290A0328B65786001B20D3 /* LinAlg.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		B72909F928B5B7EC001B20D3 /* AlgebraLinear */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgebraLinear; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72909FC28B5B7EC001B20D3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B7290A0328B65786001B20D3 /* LinAlg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinAlg.cpp; sourceTree = "<group>"; };
+		B7290A0428B65786001B20D3 /* LinAlg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinAlg.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				B72909FC28B5B7EC001B20D3 /* main.cpp */,
+				B7290A0328B65786001B20D3 /* LinAlg.cpp */,
+				B7290A0428B65786001B20D3 /* LinAlg.hpp */,
 			);
 			path = AlgebraLinear;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7290A0528B65786001B20D3 /* LinAlg.cpp in Sources */,
 				B72909FD28B5B7EC001B20D3 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
