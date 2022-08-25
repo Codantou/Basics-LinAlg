@@ -9,6 +9,13 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
+typedef std::vector< std::vector<double> > m_matrix;
+m_matrix Matrice(unsigned int  nrow,unsigned int  ncol, double initial_value = 0){
+    m_matrix new_matrix(nrow, std::vector<double>(ncol,initial_value));
+    return new_matrix;
+}
+
 vector<vector<double>> create_mat(unsigned i, unsigned j){
     vector<vector<double>> Matrix;
     for (int k(0); k < i; k++){
