@@ -80,9 +80,10 @@ public:
             return mat_null;
         }
     }
-    MATRIX operator+ (MATRIX & right){
+    MATRIX operator+ (MATRIX &right){
         MATRIX result;
-       result = right.add(M);
+        result = right.add(*this);
+        return result;
     }
 private:
     T** M;

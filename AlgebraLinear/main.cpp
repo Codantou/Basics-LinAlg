@@ -36,6 +36,7 @@ int main(){
     M.fillin(0, 1, 2);
     M.fillin(1, 1, 3);
     M.fillin(1, 0, 4);
+    M_2.fillin(1, 1, 5);
     M.display_mat();
     cout <<endl;
     M_2.display_mat();
