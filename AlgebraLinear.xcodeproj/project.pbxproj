@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B72909FD28B5B7EC001B20D3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B72909FC28B5B7EC001B20D3 /* main.cpp */; };
 		B7290A0528B65786001B20D3 /* LinAlg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7290A0328B65786001B20D3 /* LinAlg.cpp */; };
-		B7C937FD28B906A600228514 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C937FB28B906A600228514 /* Matrix.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +28,6 @@
 		B72909FC28B5B7EC001B20D3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7290A0328B65786001B20D3 /* LinAlg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinAlg.cpp; sourceTree = "<group>"; };
 		B7290A0428B65786001B20D3 /* LinAlg.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LinAlg.hpp; sourceTree = "<group>"; };
-		B7C937FB28B906A600228514 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
 		B7C937FC28B906A600228514 /* Matrix.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Matrix.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +64,6 @@
 				B72909FC28B5B7EC001B20D3 /* main.cpp */,
 				B7290A0328B65786001B20D3 /* LinAlg.cpp */,
 				B7290A0428B65786001B20D3 /* LinAlg.hpp */,
-				B7C937FB28B906A600228514 /* Matrix.cpp */,
 				B7C937FC28B906A600228514 /* Matrix.hpp */,
 			);
 			path = AlgebraLinear;
@@ -129,7 +126,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7C937FD28B906A600228514 /* Matrix.cpp in Sources */,
 				B7290A0528B65786001B20D3 /* LinAlg.cpp in Sources */,
 				B72909FD28B5B7EC001B20D3 /* main.cpp in Sources */,
 			);
