@@ -30,17 +30,10 @@ int main(){
     Alg1.mul(matrix1, matrix2);*/
      
     MATRIX<double> M(2, 2);
-    MATRIX<double> M_2(2, 2);
-    MATRIX<double> M_3;
-    M.fillin(0, 0, 1);
-    M.fillin(0, 1, 2);
-    M.fillin(1, 1, 3);
-    M.fillin(1, 0, 4);
-    M_2.fillin(1, 1, 5);
-    M.display_mat();
-    cout <<endl;
+    MATRIX<double> M_2(3, 3);
+    M_2.fillin(0, 0, 1);
+    M_2.fillin(1, 1, 2);
+    M_2.fillin(2, 2, 3);
     M_2.display_mat();
-    cout<<endl;
-    M_3 = M + M_2;
-    M_3.display_mat();
+    M_2.det();
 }
