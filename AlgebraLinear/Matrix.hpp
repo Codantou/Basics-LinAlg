@@ -13,6 +13,11 @@ using namespace std;
 template <typename T>
 class MATRIX{
 public:
+    MATRIX(){
+        m_row = 0;
+        m_col = 0;
+        M = nullptr;
+    }
     MATRIX(int n_row, int n_col){ //Constuctor
         m_row = n_row;
         m_col = n_col;
@@ -59,9 +64,30 @@ public:
             cout << endl;
         }
     }
+    MATRIX add(const MATRIX& m){;
+        if (m_row == m.m_row && m_col == m.m_col){
+            MATRIX new_mat(m_row,  m_col);
+        for (int i(0); i < m.m_row; i++){
+            for (int j(0); j< m.m_col; j++){
+                new_mat.fillin(i, j, M[i][j] + m.M[i][j]);
+            }
+        }
+            return new_mat;
+            
+        }else{
+            cout << "The matrix should have the same size" << endl;
+            MATRIX mat_null;
+            return mat_null;
+        }
+    }
+    MATRIX operator+ (MATRIX & right){
+        MATRIX result;
+       result = right.add(M);
+    }
 private:
     T** M;
     int m_row;
     int m_col;
 };
+
 #endif /* Matrix_hpp */
