@@ -10,27 +10,27 @@
 #include <cmath>
 #include <string>
 #include "LinAlg.hpp"
+#include "Matrix.hpp"
+#include <complex>
 using namespace std;
 
 int main(){
-    LinAlg mat1;
-    vector<vector<double>> Matrix, Matrix2;
-    Matrix = mat1.creat_Mat(2, 2);
-    Matrix2 = mat1.creat_Mat(2, 1);
-    Matrix[0][0] = 1;
-    Matrix[0][1] = 2;
-    Matrix[1][0] = 4;
-    Matrix[1][1] = 3;
+    /*typedef vector<vector<double>> mat2d;
+    LinAlg Alg1;
+    mat2d matrix1(Alg1.creat_Mat(2, 2)), matrix2(Alg1.creat_Mat(2, 2));
     
-    Matrix2[0][0] = 5;
-    Matrix2[1][0] = 6;
-
+    matrix1 = {
+        {1, 2},
+        {3, 4}
+    };
+    matrix2 = {{5, 6}, {7, 8}};
+    Alg1.display_mat(matrix1);
+    Alg1.display_mat(matrix2);
+    Alg1.add(matrix1, matrix2);
+    Alg1.mul(matrix1, matrix2);*/
+     
+    MATRIX<double> M(2, 2);
+    M.fillin(0, 0, 1);
+    M.display_mat();
     
-    mat1.display_mat(Matrix);
-    cout<<"------------------"<<endl;
-    mat1.display_mat(Matrix2);
-    cout<<"------------------"<<endl;
-    mat1.add(Matrix, Matrix2);
-    cout<<"------------------"<<endl;
-    mat1.mul(Matrix, Matrix2);
 }

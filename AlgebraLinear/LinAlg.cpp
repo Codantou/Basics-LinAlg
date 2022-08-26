@@ -46,6 +46,7 @@ void LinAlg:: display_mat(vector<vector<double>> Matrice){
         }
         cout << endl;
     }
+    cout<<"--------------------"<<endl;
     
 }
 
