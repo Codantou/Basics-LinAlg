@@ -138,36 +138,28 @@ public:
         return result;
     }
     
-    T det(){
+    T det(){ // Gauss elimination Algorithm
         T det_ = 0;
-        int p, j, i;
         if (m_row == m_col){
             if (m_row == 2){
                 return M[0][0]*M[1][1] - M[0][1]*M[1][0];
-            }/*else{
-                int h(0), k(0);
-                for (p=0; p < m_row; p++){
-                    MATRIX new_mat(m_row-1, m_col-1);
-                    for(i=0; i < m_row; i++){
-                        for (j=0; j < m_row; j++){
-                            if (j == p){
-                                continue;
-                            }
-                            new_mat.fillin(h, k, M[i][j]);
-                            k++;
-                            if (k == m_row-1){
-                                h++;
-                                k=0;
-                            }
-                            
+            }else{
+                det_= 1;
+                for (int i(0); i < m_row-1; i++){
+                    for (int j=i+1; j < m_row; j++){
+                        T f = M[j][i] / M[i][i];
+                        for (int k = 0; k < m_row+1; k++){
+                            M[j][k] = M[j][k] - f*M[i][k];
                         }
                     }
-                    det_ = det_ +M[0][p] * pow(-1, p) * new_mat.det();
                 }
-                
-                return det_;
-            }*/
+                for (int i(0); i< m_row; i++){
+                    det_ *= M[i][i];
+                }
+                return det_;            }
+        
         }
+        cout << "It should be a square matrix";
         return det_;
     }
     
@@ -178,6 +170,25 @@ public:
                 new_mat.fillin(j, i, M[i][j]);
             }
         }
+        return new_mat;
+    }
+    
+    MATRIX triangular(){
+        MATRIX new_mat(m_row, m_col);
+        for (int i(0); i < m_row-1; i++){
+            for (int j=i+1; j < m_row; j++){
+                T f = M[j][i] / M[i][i];
+                for (int k = 0; k < m_row+1; k++){
+                    M[j][k] = M[j][k] - f*M[i][k];
+                }
+            }
+        }
+        for (int i(0); i<m_row; i++){
+            for (int j(0); j<m_row; j++){
+                new_mat.fillin(i, j, M[i][j]);
+            }
+        }
+        
         return new_mat;
     }
 private:
