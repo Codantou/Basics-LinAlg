@@ -60,7 +60,7 @@ public:
     void display_mat(){
         for (int i(0); i < m_row; i++){
             for (int j(0); j < m_col; j++){
-                cout<< M[i][j]<<" ";
+                cout<< M[i][j]<<"  ";
             }
             cout << endl;
         }
@@ -190,6 +190,21 @@ public:
         }
         
         return new_mat;
+    }
+    
+    int rank(){
+        MATRIX new_mat;
+        int rank = m_row;
+        new_mat = (*this).triangular();
+        for (int i(0); i<m_row; i++){
+            for(int j(0); j < m_col; j++){
+                if (M[i][j] != 0){
+                    rank -=1;
+                }
+                break;
+            }
+        }
+        return rank;
     }
 private:
     T** M;
