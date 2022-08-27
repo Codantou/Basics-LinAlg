@@ -10,8 +10,9 @@
 #include <iostream>
 #include <stdio.h>
 using namespace std;
-template <typename T>
-class MATRIX{
+
+template <typename T> class MATRIX{
+    
 public:
     MATRIX(){
         m_row = 0;
@@ -136,26 +137,49 @@ public:
         result = (*this).substract(right);
         return result;
     }
-    void det(){
+    
+    T det(){
+        T det_ = 0;
+        int p, j, i;
         if (m_row == m_col){
             if (m_row == 2){
-                T det;
-                det = M[0][0] * M[1][1] - (M[0][1] * M[1][0]);
-                cout << det << endl;
-                cout<< endl;
-            }else if (m_row == 3){
-                T det;
-                det = (M[0][0]*M[1][1]*M[2][2]) - (M[0][0]*M[1][2]*M[2][1]) + (M[0][2]*M[1][0]*M[2][1]) - (M[0][2]*M[1][1]*M[2][0]) + (M[0][1]*M[1][2]*M[2][0]) - (M[0][1]*M[1][0]*M[2][2]);
-                cout<<det<<endl;
-                cout<<endl;
-            }
-        }else{
-            cout << "It should be a square matrix"<<endl;
-            cout << endl;
-            
+                return M[0][0]*M[1][1] - M[0][1]*M[1][0];
+            }/*else{
+                int h(0), k(0);
+                for (p=0; p < m_row; p++){
+                    MATRIX new_mat(m_row-1, m_col-1);
+                    for(i=0; i < m_row; i++){
+                        for (j=0; j < m_row; j++){
+                            if (j == p){
+                                continue;
+                            }
+                            new_mat.fillin(h, k, M[i][j]);
+                            k++;
+                            if (k == m_row-1){
+                                h++;
+                                k=0;
+                            }
+                            
+                        }
+                    }
+                    det_ = det_ +M[0][p] * pow(-1, p) * new_mat.det();
+                }
+                
+                return det_;
+            }*/
         }
+        return det_;
     }
     
+    MATRIX transpose(){
+        MATRIX new_mat(m_col, m_row);
+        for (int j(0); j < m_col; j++){
+            for (int i(0); i < m_row; i++){
+                new_mat.fillin(j, i, M[i][j]);
+            }
+        }
+        return new_mat;
+    }
 private:
     T** M;
     int m_row;

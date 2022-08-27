@@ -14,26 +14,23 @@
 #include <complex>
 using namespace std;
 
+template <typename T> T get_min(T a, T b){
+    if (a > b){
+        return b;
+    }
+    return a;
+}
 int main(){
-    /*typedef vector<vector<double>> mat2d;
-    LinAlg Alg1;
-    mat2d matrix1(Alg1.creat_Mat(2, 2)), matrix2(Alg1.creat_Mat(2, 2));
+    MATRIX<double> M1(3, 2), M2;
+    M1.fillin(0, 0, 1);
+    M1.fillin(0, 1, 2);
+    M1.fillin(1, 0, 3);
+    M1.fillin(1, 1, 4);
+    M1.fillin(2, 0, 5);
+    M1.fillin(2, 1, 6);
+
+    M1.display_mat();
     
-    matrix1 = {
-        {1, 2},
-        {3, 4}
-    };
-    matrix2 = {{5, 6}, {7, 8}};
-    Alg1.display_mat(matrix1);
-    Alg1.display_mat(matrix2);
-    Alg1.add(matrix1, matrix2);
-    Alg1.mul(matrix1, matrix2);*/
-     
-    MATRIX<double> M(2, 2);
-    MATRIX<double> M_2(3, 3);
-    M_2.fillin(0, 0, 1);
-    M_2.fillin(1, 1, 2);
-    M_2.fillin(2, 2, 3);
-    M_2.display_mat();
-    M_2.det();
+    M2 = M1.transpose();
+    M2.display_mat();
 }
