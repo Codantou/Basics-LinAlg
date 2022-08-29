@@ -22,15 +22,10 @@ template <typename T> T get_min(T a, T b){
 }
 int main(){
     MATRIX<double> M1(2, 3), M2;
-    M1.fillin(0, 0, 1);
-    M1.fillin(0, 1, 2);
-    M1.fillin(0, 2, 3);
-    M1.fillin(1, 0, 3);
-    M1.fillin(1, 1, 6);
-    M1.fillin(1, 2, 9);
+    M1.fillin(0, 0, 2);
     M1.display_mat();
-    M2 = M1.triangular();
+    M1.fillin(0, 0, 4);
+    M1.display_mat();
+    M2 = M1;
     M2.display_mat();
-    cout << M1.rank();
-
 }

@@ -49,7 +49,7 @@ public:
             M[i] = (T*) new T[m_col];
         }
         for (int i(0); i<m_row; i++){
-            for (int j(0); j<m_col; i++){
+            for (int j(0); j<m_col; j++){
                 M[i][j] = _M.M[i][j];
             }
         }
@@ -205,6 +205,35 @@ public:
             }
         }
         return rank;
+    }
+    
+    int operator() (int & i, int &j){
+        return (*this)[i][j];
+    }
+    MATRIX operator=(const MATRIX& _M){
+        if (m_col > 0){
+            for (int i(0); i < m_row; i++){
+                delete [] M[i];
+            }
+        }
+        if (m_row > 0){
+            delete [] M;
+        }
+        m_row = _M.m_row;
+        m_col = _M.m_col;
+        
+        M = (T**) new T[m_col];
+        for (int i(0); i < m_row; i++){
+            M[i] = (T*) new T[m_col];
+        }
+        
+        for (int i(0); i < m_row; i++){
+            for (int j(0); j < m_col; j++){
+                M[i][j] = _M.M[i][j];
+            }
+        }
+        return (*this);
+        
     }
 private:
     T** M;
