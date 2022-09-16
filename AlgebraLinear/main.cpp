@@ -21,11 +21,11 @@ template <typename T> T get_min(T a, T b){
     return a;
 }
 int main(){
-    MATRIX<double> M1(2, 3), M2;
-    M1.fillin(0, 0, 2);
+    MATRIX<double> M1(4, 4), M2(2, 2);
+    M1 = M1.eye();
     M1.display_mat();
-    M1.fillin(0, 0, 4);
-    M1.display_mat();
-    M2 = M1;
+    M2.id();
     M2.display_mat();
+    M1*= 2.0;
+    M1.display_mat();
 }

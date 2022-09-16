@@ -207,9 +207,6 @@ public:
         return rank;
     }
     
-    int operator() (int & i, int &j){
-        return (*this)[i][j];
-    }
     MATRIX operator=(const MATRIX& _M){
         if (m_col > 0){
             for (int i(0); i < m_row; i++){
@@ -235,6 +232,43 @@ public:
         return (*this);
         
     }
+    
+    MATRIX eye(){
+        for (int i(0); i<m_row; i++){
+            for (int j(0); j<m_col; j++){
+                M[i][j] = 1;
+            }
+        }
+        return (*this);
+    }
+    
+    MATRIX id(){
+        if (m_row != m_col){
+            MATRIX mat_null;
+            return mat_null;
+        }
+        for(int i(0); i<m_row; i++){
+            M[i][i] = 1;
+        }
+        return (*this);
+    }
+    
+    MATRIX scalar_mul(const T& val){
+        for (int i(0); i<m_row; i++){
+            for (int j(0); j<m_col; j++){
+                M[i][j] *= val;
+            }
+        }
+        return (*this);
+    }
+    
+    
+    MATRIX operator*=(const T& val){
+        MATRIX result;
+        result = (*this).scalar_mul(val);
+        return result;
+    }
+    
 private:
     T** M;
     int m_row;
